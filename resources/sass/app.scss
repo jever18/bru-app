@@ -1,0 +1,43 @@
+// resources/sass/app.scss
+
+// 1. Menggunakan @use dengan alias yang sudah dikonfigurasi di vite.config.js
+@use "~bootstrap/scss/functions" as *;
+
+// 2. Kustomisasi variabel Bootstrap di sini (jika perlu)
+// Contoh: $primary: #1e70bf;
+
+// 3. Impor semua Bootstrap
+@use "~bootstrap/scss/bootstrap";
+
+
+/* ------------------------------------- */
+/* GLASSMORPHISM STYLING */
+/* ------------------------------------- */
+
+.glass-card {
+    background-color: rgba(255, 255, 255, 0.15) !important; /* Latar belakang putih transparan (15%) */
+    backdrop-filter: blur(8px) !important; /* Efek buram (Glassmorphism) */
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 1rem; /* Sudut melengkung */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border transparan */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Shadow lembut */
+    color: white !important; /* Ubah warna teks default menjadi putih */
+}
+
+/* Penyesuaian agar teks dalam card tidak terlalu buram */
+.glass-card .card-title,
+.glass-card .h5,
+.glass-card .fw-bolder {
+    color: white !important;
+}
+
+/* Penyesuaian untuk input di dalam form glass-card */
+.glass-card .form-control,
+.glass-card .form-select {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white; /* Teks input putih */
+}
+.glass-card .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder lebih terang */
+}
